@@ -81,38 +81,35 @@ jQuery(document).ready(function($) {
     
     
     // AJAX SUBSCRIBE FORM
-    $('.subscribe-form').submit(function() {
-
-        var postdata = $('.subscribe-form').serialize();
-
-        $.ajax({
-
-            type: 'POST',
-            url: 'assets/php/subscribe.php',
-            data: postdata,
-            dataType: 'json',
-            success: function(json) {
-
-                $('.subscribe-form').removeClass("form-error");
-
-                if(json.valid === 0) {
-                    
-                    $('.subscribe-form').addClass("form-error");
-                    
-                } else {
-
-                    $('.subscribe-form').addClass("form-success");
-                    $('.subscribe-form input,.subscribe-form button').val('').prop('disabled', true);
-                    
-                }
-                
-            }
-
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".subscribe-form");
+        const successMessage = document.querySelector(".success-message");
+        const errorMessage = document.querySelector(".error-message");
+      
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+      
+          fetch("subscribe.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.status === "success") {
+                successMessage.style.display = "block";
+                errorMessage.style.display = "none";
+              } else {
+                successMessage.style.display = "none";
+                errorMessage.style.display = "block";
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
         });
-
-        return false;
-
-    });
+      });
+      
     
     
 });

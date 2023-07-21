@@ -1,49 +1,27 @@
 <?php
+require 'path-to-mailchimp-library/autoload.php'; // Include the Mailchimp PHP library
 
-// ENTER PATH TO FILE
-$file_path = $_SERVER["DOCUMENT_ROOT"] . "/";
+use MailchimpMarketing\ApiClient;
+$apiKey = '698f66392db330b03364d76a3ff4c922-us21';
+$listId = 'YOUR_LIST_ID';
 
-// ENTER NAME OF FILE 
-$file_name = "subscriber-list.txt";
+$apiClient = new ApiClient();
+$apiClient->setConfig([
+    'apiKey' => $apiKey,
+    'server' => 'us21',
+]);
 
+$email = $_POST['email_address'];
 
-if($_POST) {
-	
-    $subscriber_email = $_POST['email'];
-	$subscriber_fhp_input = $_POST['phone'];
-	$array = array();
-    
-    if( $subscriber_email == "" ) {
-        
-        $array["valid"] = 0;
-        
-    } else {
+try {
+    $response = $apiClient->lists->addListMember($listId, [
+        'email_address' => $email,
+        'status' => 'subscribed', // 'subscribed', 'unsubscribed', 'pending', 'cleaned'
+    ]);
 
-        if( !filter_var($subscriber_email, FILTER_VALIDATE_EMAIL) || $subscriber_fhp_input != "") {
-
-            $array["valid"] = 0;
-            $array["message"] = $varErrorValidation;
-
-        } else {
-
-            file_put_contents($file_path.$file_name, strtolower($subscriber_email)."\r\n", FILE_APPEND);
-
-            if (file_exists($file_path.$file_name)) {   
-
-                $array["valid"] = 1;
-
-            } else {
-
-                $array["valid"] = 0;
-
-            }
-
-        }
-        
-    }
-	
-	echo json_encode($array);
-
+    // Handle successful subscription
+    echo json_encode(['status' => 'success', 'message' => 'Successfully subscribed!']);
+} catch (Exception $e) {
+    // Handle error
+    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
 }
-
-?>
