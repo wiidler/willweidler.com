@@ -1,0 +1,23 @@
+body {
+  background-color: #5c5470 !important;
+}
+.sidebar {
+  background-color: #352f44 !important;
+  color: #faf0e6;
+  font-family: Fira Code, monospace;
+}
+.sidebar li {
+  font-weight: 100;
+}
+
+.nav-link {
+  color: #faf0e6 !important;
+}
+.profilepic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 100% 0;
+  text-align: center;
+}
