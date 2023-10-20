@@ -1,17 +1,43 @@
 body {
   background-color: #5c5470 !important;
+  display: flex;
+  font-family: Fira Code, monospace;
+  font-weight: 100 !important;
+  color: #faf0e6 !important;
+}
+/* Adjust the margin for your main content */
+.content {
+  margin-left: 240px; /* Should match the width of the sidebar */
+}
+
+h2 {
+  font-size: x-large;
 }
 .sidebar {
   background-color: #352f44 !important;
   color: #faf0e6;
+  width: 240px; /* Set a fixed initial width for the sidebar */
+  min-height: 100vh; /* Make the sidebar at least as tall as the viewport */
+  position: fixed;
+}
+.sidebar-text {
+  color: #faf0e6 !important;
   font-family: Fira Code, monospace;
+}
+.sidebar-text:hover {
+  color: #b9b4c7 !important;
 }
 .sidebar li {
   font-weight: 100;
 }
-
 .nav-link {
   color: #faf0e6 !important;
+}
+.nav-link:hover {
+  color: #b9b4c7 !important;
+}
+.nav-item {
+  color: #b9b4c7;
 }
 .profilepic {
   border-radius: 50%;
@@ -20,4 +46,24 @@ body {
   object-fit: cover;
   object-position: 100% 0;
   text-align: center;
+}
+.hero {
+  flex-grow: 1; /* Allow the hero section to grow and take remaining space */
+  background: rgb(53, 47, 68);
+  background: linear-gradient(
+    90deg,
+    rgba(53, 47, 68, 1) 0%,
+    rgba(92, 84, 112, 1) 35%,
+    rgba(185, 180, 199, 1) 100%
+  );
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Optional for centering text within the box */
+}
+.heading {
+  color: #faf0e6 !important;
+  font-weight: 500 !important;
 }
