@@ -23,8 +23,7 @@
   <body>
     <!--Sidebar-->
     <div
-      class="sidebar d-flex flex-column flex-shrink-0 p-3 bg-light"
-      style="width: 240px; height: 100vh"
+      class="sidebar d-flex flex-column flex-shrink-0 p-3 bg-light border-end"
     >
       <a
         href="/"
@@ -37,9 +36,9 @@
             width="100"
             height="100"
           />
-          <h2 class="sidebar-text" style="font-weight: 600">Will Weidler</h2>
+          <h2 class="sidebar-info" style="font-weight: 600">Will Weidler</h2>
           <a
-            class="sidebar-text flex-column align-items-center mb-md-0 me-md-auto link-dark text-decoration-underline"
+            class="sidebar-info flex-column align-items-center mb-md-0 me-md-auto link-dark text-decoration-underline"
             href="mailto:will@willweidler.com"
           >
             <p class="mb-0">will@willweidler.com</p>
@@ -84,14 +83,72 @@
       <hr />
       <p>© 2023 | Will Weidler</p>
     </div>
+    <div>
+      <!--Hero-->
+      <div class="px-4 py-5 text-center content hero">
+        <h1 class="display-5 fw-bold text-body-emphasis heading">
+          Hi! My name is Will.
+        </h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">I'm a student and aspiring web developer.</p>
+          <p>Scroll down to learn more about me.</p>
+          <img src="./assets/arrow down.png" height="50" />
+        </div>
+      </div>
 
-    <!--Hero-->
-    <div class="px-4 py-5 text-center content hero">
-      <h1 class="display-5 fw-bold text-body-emphasis heading">
-        Hi! My name is Will.
-      </h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">I'm a student and aspiring web developer.</p>
+      <!--Jumbotron-->
+      <div class="px-4 py-0 text-center content jumbotron">
+        <div class="container py-5">
+          <h1 class="text-body-emphasis sidebar-text my-3">
+            So, what am I doing right now?
+          </h1>
+          <ul class="job-list mt-0">
+            <li>
+              <h5>
+                B.S. in Computer Science at
+                <a
+                  href="https://www.mst.edu"
+                  class="nav-link link-dark link-text"
+                  style="text-decoration: underline #faf0e6 !important"
+                  >Missouri S&T</a
+                >
+              </h5>
+              <p>
+                Currently with a 3.85 GPA and graduating in May 2025. I have
+                been active in many campus extracurriculars, like intramural
+                Basketball and Bowling, and several student organizations like
+                the Mars Rover Design Team and Christian Campus Fellowship.
+              </p>
+            </li>
+            <li>
+              <h5>
+                BaseStation Lead on
+                <a
+                  href="https://marsrover.mst.edu"
+                  class="nav-link link-dark link-text"
+                  style="text-decoration: underline #faf0e6 !important"
+                  >the Mars Rover Design Team</a
+                >
+              </h5>
+              <p>
+                Joining the team when I came to S&T in the 2021-2022 school
+                year, I have worked on the Autonomous sub-team focusing on
+                computer vision and ArUco detection. In the 2022-2023 school
+                year, I joined the BaseStation subteam, and helped develop and
+                debug tools for the Rover's control station. This year, I lead
+                the BaseStation sub-team.
+              </p>
+            </li>
+            <li>
+              <h5>B.S. in Computer Science at Missouri S&T</h5>
+              <p>
+                Graduating in May 2025, I have been active in many campus
+                organizations, like the Mars Rover Design Team. This year, I
+                lead the BaseStation sub-team.
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
