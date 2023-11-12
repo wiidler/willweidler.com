@@ -118,7 +118,11 @@ h2 {
 .email-small {
   display: none;
 }
-
+@media (min-width: 992px) {
+  .content {
+    height: 100vh;
+  }
+}
 @media (max-width: 991px) {
   .content {
     flex-grow: 1;
