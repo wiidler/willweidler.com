@@ -155,7 +155,7 @@ h2 {
     text-align: center !important;
     font-size: medium;
   }
-  .nav-link {
+  .sidebar-item.nav-link {
     color: #faf0e6 !important;
     font-size: small;
     padding: 0;
