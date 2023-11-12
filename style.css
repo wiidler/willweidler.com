@@ -14,7 +14,6 @@ body {
   text-align: center;
   margin-left: 240px; /* Match the width of the sidebar */
   width: calc(100vw - 240px);
-  height: 100vh;
 }
 .container {
   margin-left: 0;
@@ -39,6 +38,14 @@ h2 {
   font-family: Fira Code, monospace;
   text-align: left !important;
 }
+.profilepic {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 100% 0;
+  text-align: center;
+}
 .paragraph-text {
   color: #faf0e6 !important;
   font-family: Fira Code, monospace;
@@ -62,14 +69,7 @@ h2 {
 .nav-item {
   color: #b9b4c7;
 }
-.profilepic {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: 100% 0;
-  text-align: center;
-}
+
 .hero {
   flex-grow: 1; /* Allow the hero section to grow and take remaining space */
   background: rgb(53, 47, 68);
@@ -111,4 +111,60 @@ h2 {
 .contact-button:hover {
   border-color: #faf0e6;
   color: #faf0e6;
+}
+.copyright-small {
+  display: none;
+}
+.email-small {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .content {
+    flex-grow: 1;
+    color: #faf0e6;
+    text-align: center;
+    margin-left: 100px; /* Match the width of the sidebar */
+    width: calc(100vw - 100px);
+  }
+  .profilepic {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    object-position: 100% 0;
+    text-align: center;
+  }
+  .sidebar {
+    background-color: #352f44 !important;
+    color: #faf0e6;
+    width: 100px;
+    min-height: 100vh;
+    position: fixed;
+  }
+  .email-big {
+    display: none;
+  }
+  .email-small {
+    font-size: medium;
+    display: block;
+  }
+  .sidebar-info {
+    color: #faf0e6 !important;
+    font-family: Fira Code, monospace;
+    text-align: center !important;
+    font-size: medium;
+  }
+  .nav-link {
+    color: #faf0e6 !important;
+    font-size: small;
+    padding: 0;
+  }
+  .copyright-big {
+    display: none;
+  }
+  .copyright-small {
+    font-size: medium;
+    display: block;
+  }
 }
