@@ -33,11 +33,11 @@ main, header {
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
 }
 
-/* Header-specific layout: title + avatar on first row, nav below */
-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; align-items: center; }
+/* Header-specific layout: title left, photo right spanning rows; nav below on left */
+header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; align-items: center; column-gap: 16px; }
 header h1 { grid-column: 1; grid-row: 1; }
-header > nav { grid-column: 1 / -1; grid-row: 2; }
-.header-photo-spot { grid-column: 2; grid-row: 1; width: 84px; height: 84px; border: 1px solid var(--dim-text); background: rgba(255, 255, 255, 0.02); overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 0 8px rgba(0, 255, 65, 0.15); }
+header > nav { grid-column: 1; grid-row: 2; }
+.header-photo-spot { grid-column: 2; grid-row: 1 / span 2; width: 112px; height: 112px; border: 1px solid var(--dim-text); background: rgba(255, 255, 255, 0.02); overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 0 8px rgba(0, 255, 65, 0.15); }
 .header-avatar {
     width: 100%;
     height: 100%;
@@ -241,14 +241,11 @@ footer {
     body { padding: 12px; }
     main, header { margin: 12px auto; padding: 16px; }
 
-    /* Stack header: title, photo, then nav */
-    header { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+    /* Compact header: title left, photo right; nav full-width below */
+    header { grid-template-columns: 1fr auto; grid-template-rows: auto auto; }
     header h1 { grid-column: 1; grid-row: 1; }
-    .header-photo-spot {
-        grid-column: 1; grid-row: 2; width: 64px; height: 64px;
-        justify-self: start; margin: 8px 0 4px;
-    }
-    header > nav { grid-column: 1; grid-row: 3; }
+    .header-photo-spot { grid-column: 2; grid-row: 1; width: 72px; height: 72px; justify-self: end; margin: 0; }
+    header > nav { grid-column: 1 / -1; grid-row: 2; }
 
     .nav-toggle { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; }
     nav ul { display: none; flex-direction: column; flex-wrap: nowrap; gap: 12px; }
