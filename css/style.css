@@ -54,6 +54,17 @@ nav ul {
     padding-bottom: 0;
 }
 
+/* Hamburger toggle (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--text-color);
+    padding: 4px 10px;
+    font-family: var(--font-stack);
+    cursor: pointer;
+}
+
 nav a {
     color: var(--text-color);
     text-decoration: none;
@@ -223,4 +234,28 @@ footer {
 
 .toggle-label:hover input[type="checkbox"] {
     background: rgba(0, 255, 65, 0.1);
+}
+
+/* Responsive (phones) */
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    main, header { margin: 12px auto; padding: 16px; }
+
+    /* Stack header: title, photo, then nav */
+    header { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+    header h1 { grid-column: 1; grid-row: 1; }
+    .header-photo-spot {
+        grid-column: 1; grid-row: 2; width: 64px; height: 64px;
+        justify-self: start; margin: 8px 0 4px;
+    }
+    header > nav { grid-column: 1; grid-row: 3; }
+
+    .nav-toggle { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+    nav ul { display: none; flex-direction: column; flex-wrap: nowrap; gap: 12px; }
+    header nav.open ul { display: flex; }
+    nav a { font-size: 0.9em; }
+
+    .resume-line { gap: 6px; }
+    button { width: 100%; }
+    .input-group input, .input-group textarea { font-size: 16px; }
 }
