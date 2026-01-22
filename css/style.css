@@ -249,7 +249,7 @@ footer {
 
     .nav-toggle { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px; }
     nav ul { display: none; flex-direction: column; flex-wrap: nowrap; gap: 12px; }
-    header nav.open ul { display: flex; }
+    nav.open ul { display: flex; }
     nav a { font-size: 0.9em; }
 
     .resume-line { gap: 6px; }
