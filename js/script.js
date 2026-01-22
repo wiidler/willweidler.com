@@ -122,18 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Execute chosen mode
-        if (typewriterEnabled) runTypewriter(); else showAllText();
-
-        // Toggle changes
-        if (toggle) {
-            toggle.addEventListener('change', (e) => {
-                localStorage.setItem('typewriterEnabled', e.target.checked);
-                location.reload();
-            });
-        }
-
-        // Mobile nav hamburger toggle
+        // Mobile nav hamburger toggle (setup before typewriter)
         const headerNav = document.querySelector('header nav');
         const navToggleBtn = headerNav ? headerNav.querySelector('.nav-toggle') : null;
         if (headerNav && navToggleBtn) {
@@ -147,6 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     headerNav.classList.remove('open');
                     navToggleBtn.setAttribute('aria-expanded', 'false');
                 });
+            });
+        }
+
+        // Execute chosen mode
+        if (typewriterEnabled) runTypewriter(); else showAllText();
+
+        // Toggle changes
+        if (toggle) {
+            toggle.addEventListener('change', (e) => {
+                localStorage.setItem('typewriterEnabled', e.target.checked);
+                location.reload();
             });
         }
 

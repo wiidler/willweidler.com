@@ -63,6 +63,7 @@ nav ul {
     padding: 4px 10px;
     font-family: var(--font-stack);
     cursor: pointer;
+    visibility: visible !important;
 }
 
 nav a {
