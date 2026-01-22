@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Weidler | Bio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header data-include="components/header.html" data-title="USER_PROFILE"></header>
+    <main>
+        <h2 class="typewriter">cat bio.txt</h2>
+        <p class="typewriter">Name: Will Weidler</p>
+        <p class="typewriter">Current Status: TECDP Senior Analyst/Cybersecurity Engineer | Global Security Education and Awareness @ The Cigna Group</p>
+        <p class="typewriter">Past Ops: Cybersecurity Engineer Intern @ National Geospatial-Intelligence Agency (NGA)</p>
+        <p class="typewriter" data-raw-text data-raw-value="Education: Missouri S&amp;T, B.S. in Computer Science (May 2025)">Education: Missouri S&amp;T, B.S. in Computer Science (May 2025)</p>
+        <br>
+        <h2 class="typewriter">cat skills.sh</h2>
+        <p class="typewriter">Languages: Python, C/C++, Java, JavaScript, HTML/CSS, SQL</p>
+        <p class="typewriter">Certifications: ISC2 CC</p>
+
+        <section class="file-system">
+            <br>
+            <h2 class="typewriter">cat resume.txt</h2>
+            <div class="resume-line">
+                <p class="typewriter" data-raw-value="View full resume:" data-reveal-target="#resume-link, #download-resume-btn">View full resume:</p>
+                <span id="resume-link" class="hidden-until-ready-inline" data-cursor-anchor>
+                    <a href="assets/Will Weidler Resume.pdf" download class="file-link">Will_Weidler_Resume.pdf</a>
+                </span>
+            </div>
+            <br>
+            <button id="download-resume-btn" class="hidden-until-ready" onclick="window.location.href='assets/Will Weidler Resume.pdf'">DOWNLOAD RESUME</button>
+        </section>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html" data-footer-status="-- Connection Idle --" data-footer-note=". All rights reserved."></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

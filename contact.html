@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Weidler | Secure_Comm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header data-include="components/header.html" data-title="ESTABLISH_CONNECTION"></header>
+    <main>
+        <h2 class="typewriter">mail --remote-host</h2>
+        <p class="typewriter">Prepare outgoing packet transmission...</p>
+        
+        <div class="terminal-form">
+            <div class="input-group">
+                <label class="typewriter" data-reveal-target="#subject-wrap">SUBJECT: </label>
+                <div id="subject-wrap" class="hidden-until-ready">
+                    <input type="text" id="subject" placeholder="Inquiry">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label class="typewriter" data-cursor-anchor data-reveal-target="#message-wrap, #initiate-btn, #status-msg">MESSAGE_BODY: </label>
+                <div id="message-wrap" class="hidden-until-ready">
+                    <textarea id="message" rows="5" placeholder="Enter message text here..."></textarea>
+                </div>
+            </div>
+
+            <button id="initiate-btn" class="hidden-until-ready" onclick="sendMail()">INITIATE_TRANSFER</button>
+            <p id="status-msg" class="hidden-until-ready" style="margin-top: 15px; display: none;"></p>
+        </div>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html" data-footer-status="-- Connection Idle --" data-footer-note="."></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
